@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>체질량 계산기</title>
+
+
+    <header>
+        <h1><a href="index.html"> Veggie shop</a></h1>
+        </header>
+
+
+
+        <style>
+            html,body {height: 100%;}
+            header {background-color: olive;color: white;padding: 28px;}
+            nav{
+                padding: 5px;
+                background-color: cadetblue;
+                color: white;
+            }
+            aside{
+                background-color: bisque;
+                float: right;
+                width: 33%;
+            }
+            
+            
+            section{
+                background-color:goldenrod;
+                width:65%;
+                float:left;
+            
+            
+            }
+            footer{
+                clear:both;
+                background-color: lightskyblue;
+            
+            }
+            article{
+                background-color: white;
+            }
+            
+            nav ul{
+                list-style: none;
+            }
+            
+            nav ul li{
+                display: inline;
+                padding: 15px;
+            }
+            
+            nav ul li a{
+                text-decoration: none;
+                color: white;
+            }
+            
+            nav ul li a:hover{
+                text-decoration: underline;
+            }
+            
+            footer ul{
+                list-style: none;
+            }
+            
+            footer ul li{
+                display: inline;
+                padding: 15px;
+            }
+            </style>
+            
+            
+            
+    
+        <nav>
+        <ul>
+            <li><a href="#fruits" > Fresh Fruits </a></li>
+            <li><a href="#veggies"> Fresh Veggies </a></li>
+            <li><a href="#salads" > Fresh Salads </a></li>
+            <li><a href="#Seedandnuts"> Seedandnuts </a></li>
+            <li><a href="#Gift box" > Gift Box</a></li>
+    
+            <li><a href="BMI.html" target="_blank"> BMI 계산기</a></li>
+            <li><a href="login.html" target="_blank">로그인</a></li>
+            <li><a href="signup.html"target="_blank">회원가입</a></li>
+        </ul>
+        </nav>
+
+
+   
+</head>
+<body>
+
+<h1> 체질량 지수 계산기</h1>
+체중(kg): <input id="weight">
+<br>
+신장(m): <input id="height">  
+
+<input type="button" value="계산" onclick="calc();" /> 
+<h3 id="result"></h3>
+<h3 id="result2"></h3>      
+<br>
+<button onclick="sub()">눌러주세요!</button>
+<h3 id="result"></h3>
+
+
+    <script>
+
+
+function calc() {
+
+    let x = document.getElementById("weight").value;
+    let y = document.getElementById("height").value;
+    
+    
+    let bmi = x / (y * y);
+    document.getElementById("result").innerHTML = bmi;
+
+    if (bmi >=25){
+document.getElementById("result2").innerHTML = "비만입니다";
+
+
+    }
+  else if((bmi>=23) && (bmi<=25)) { 
+    document.getElementById("result2").innerHTML = "과체중입니다";
+
+  }
+
+  else if((bmi>=18.5) && (bmi<23)) { 
+    document.getElementById("result2").innerHTML = "정상입니다";
+
+  }
+
+  else if(bmi ) {  
+
+    document.getElementById("result2").innerHTML = "저체중입니다";
+
+  }
+
+function sub(){
+const name = prompt('이름을 입력해주세요;');
+document.getElementById("test").innerHTML = "welcome" + name;
+
+}
+}
+
+
+    //console.log(x);
+    //console.log(y);
+
+    </script>
+    
+</body>
+</html>
